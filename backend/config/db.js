@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-
 mongoose.connect("mongodb+srv://chico:chico123Z@cluster0.cggacou.mongodb.net/vapeit12345?retryWrites=true&w=majority")
 .then(()=>console.log('Atlas database connected'))
 .catch((err)=>console.log(err))
@@ -45,5 +44,24 @@ module.exports={
 }) ,
  Card:mongoose.model('Card',{
 
-})
+}),
+User:mongoose.model('User', {
+        name: {
+          type: String,
+          required: [true, 'Please add a name'],
+        },
+        email: {
+          type: String,
+          required: [true, 'Please add an email'],
+          unique: true,
+        },
+        password: {
+          type: String,
+          required: [true, 'Please add a password'],
+        },
+      },
+      {
+        timestamps: true,
+      })
 }
+
