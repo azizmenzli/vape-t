@@ -1,5 +1,6 @@
 const {Atomizer} = require('../model/productModel.js')
 
+
 module.exports={
     saveAtomizer:(req,res)=>{
         const newAtomizer= new Atomizer({
