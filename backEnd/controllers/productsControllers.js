@@ -1,4 +1,4 @@
-const {Atomizer} = require('../config/db.js')
+const {Atomizer} = require('../model/productModel.js')
 
 module.exports={
     saveAtomizer:(req,res)=>{
@@ -9,7 +9,7 @@ module.exports={
             imgSrc:req.body.imgSrc
         })
         console.log(newAtomizer)
-        db.Atomizer.insert(newAtomizer).then((result)=>{
+        newAtomizer.save().then((result)=>{
             res.status(200).json(result)
         })
         .catch((err)=> res.send(err.message).status(500))
@@ -21,7 +21,8 @@ module.exports={
             err?console.log(err):res.send(results)
         })
     
-    }
+    },
+    
     
 }
 

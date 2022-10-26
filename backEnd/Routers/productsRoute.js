@@ -4,7 +4,7 @@ const{saveAtomizer,findAtomizer} =require ('../controllers/productsControllers.j
 
 
 
-router.get('/:id',findAtomizer)
-router.post('/post',saveAtomizer)
+router.get('/getAll',findAtomizer)
+router.post('/add',saveAtomizer)
 
 module.exports=router
