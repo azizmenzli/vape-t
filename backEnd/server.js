@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
+const port = process.env.PORT || 5000;
 const app = express();
 const liquides=require('./Routers/liquidesRoute.js')
 const mode=require('./Routers/modeRoute.js')
