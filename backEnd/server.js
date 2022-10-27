@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/atomizer',atomizer)
+app.use('/api/users', require('./Routers/userRoutes'));
 
 
 
