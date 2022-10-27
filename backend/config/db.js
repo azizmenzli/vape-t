@@ -1,14 +1,9 @@
 const mongoose = require('mongoose')
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI)
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`.yellow.underline)
-  } catch (error) {
-    console.log(error)
-    process.exit(1)
-  }
-}
+const conn =mongoose.connect("mongodb+srv://chico:chico123Z@cluster0.cggacou.mongodb.net/vapeit12345?retryWrites=true&w=majority")
+.then(()=>console.log('Atlas database connected'))
+.catch((err)=>console.log(err))
+module.exports=conn
 
-module.exports = connectDB
+ 
