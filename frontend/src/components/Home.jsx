@@ -1,4 +1,5 @@
 import React from 'react'
+import Contact from './Contact'
 import Product from './Product'
 
 const Home = () => {
@@ -35,6 +36,7 @@ const Home = () => {
         </button>
       </div>
       <Product/>
+      <Contact/>
 
     </div>
   )

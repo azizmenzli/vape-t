@@ -2,9 +2,15 @@
 	width: 105px;
 	height: auto;
 }
-
+.navbar-nav {
+	justify-content: space-between;
+	align-items: center;
+	width: 30vw;
+	
+}
 .navbar-nav li a{
-    font-size: 17px;
+    font-size: 20px;
+	margin-left: 40px;
 }
 .card{
 	transition: all 0.5s ease;

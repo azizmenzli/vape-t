@@ -14,9 +14,9 @@ const addItems = (state = addItem, action) =>{
             })
             break;
 
-            default: return state
+            default: return state;
             break;
     }
 }
 
-export default addItem;
+export default addItems;

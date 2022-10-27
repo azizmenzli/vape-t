@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Login = () => {
     return (
@@ -34,13 +35,24 @@ const Login = () => {
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                     <input type="password" className="form-control" placeholder="Your Password" id="exampleInputPassword1"/>
                                 </div>
-                                <div className="mb-3 form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                                </div>
+                                
+                                	<div className="form-group">
+							<div className="custom-control custom-checkbox">
+								<input type="checkbox" className="custom-control-input" id="customControlInline"/>
+								<label className="custom-control-label" htmlFor="customControlInline">Remember me</label>
+							</div>
+						</div>
                                 <button type="submit" className="btn btn-dark w-100 mt-5" >Sign in</button>
                             </form>
                         </div>
+                        <div className="mt-4">
+					<div className="d-flex justify-content-center links">
+						Don't have an account? <NavLink to="/Signup" className="ml-2"> Sign Up</NavLink>
+					</div>
+					<div className="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div>
                         
                     </div>
                 </div>
