@@ -9,8 +9,8 @@ const Product = () => {
         <div className="card-body text-center">
           <h5 className="card-title">{item.title}</h5>
           <p className="lead">${item.price}</p>
-          <NavLink to={`/product/${item.id}`} className="btn
-           btn-outline-primary">Buy Now</NavLink>
+          <NavLink to={`/products/${item.id}`} className="btn
+           btn-outline-dark">Buy Now</NavLink>
         </div>
       </div>
     )

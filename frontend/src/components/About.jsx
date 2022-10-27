@@ -8,7 +8,7 @@ const About = () => {
         <div className="row">
           <div className="col-md-6">
             <h1>About Us</h1>
-            <p className="lead">
+            <p className="lead mb-4">
               Welcome to Vape-it Tunisian Ltd
               We are one of the Tunisian's
               Premium E-liquid Manufacturers
@@ -40,7 +40,7 @@ const About = () => {
             <NavLink to="/contact" className="btn
            btn-dark px-3"> Contact Us</NavLink>
           </div>
-          <div className="col -md-6">
+          <div className="col -md-6 d-flex justify-content-center">
             <img src="/assets/images/aboutus/vape.png" alt="About Us"
             height="500px" width="500px"/>
           </div>
