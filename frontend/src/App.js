@@ -1,14 +1,29 @@
+import './App.css'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import About from "./components/About";
+import Product from "./components/Product";
+import Contact from "./components/Contact";
+import {Routes, Route} from 'react-router-dom'
 
-import Navbar from "./components/Navbar";
 
 
 function App(){
     return(
-        <div className="App">
+        <> 
+        <Header/>
+        <Routes>
+      <Route  exact path="/"  element={<Home />} />
+      <Route  exact path="about"  element={<About />} />
+      <Route exact path="products"  element={< Product/>} />
+      <Route exact path="contact"  element={<Contact />} />
+      
+      
+      </Routes>
+         <Footer/>
 
-        <Navbar/>
-
-        </div>
+        </>
     );
 }
 export default App
