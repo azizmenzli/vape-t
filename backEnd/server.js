@@ -5,15 +5,18 @@ const dotenv = require('dotenv').config();
 const connectDB = require('./config/db');
 const port = process.env.PORT || 5000;
 const app = express();
-const atomizer=require('./Routers/productsRoute.js')
-const saveAtomizer=require('./Routers/productsRoute.js')
+const liquides=require('./Routers/liquidesRoute.js')
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
 
-app.use('/atomizer',atomizer)
+
+app.use('/liquides',liquides)
+
+
 
 
 
