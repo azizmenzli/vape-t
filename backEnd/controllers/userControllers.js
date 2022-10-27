@@ -55,7 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access  Public
 const loginUser = asyncHandler(async (req, res) => {
 
-   //res.json({message : 'Logged User'})
+  //res.json({message : 'Logged User'})
   const { email, password } = req.body
 
   // Check for user email
