@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/style.css'
 
 const Contact = () => {
   return (
@@ -14,6 +15,16 @@ const Contact = () => {
           <div className="col-md 5">
             <img src="/assets/images/contact-us-banner-img.png" alt="Contact Us"
               height="400px" width="400px" />
+              <br />
+              <br/>
+              <div class="content">
+    
+      <ul>
+      <a href="https://www.facebook.com/treyozz/"><i class='bx bxl-facebook' ></i></a>
+      <a href="https://www.instagram.com/sketchboyie/"><i class='bx bxl-instagram' ></i></a>
+    </ul>
+ 
+</div>
           </div>
           <div className="col-md-6">
             <form>

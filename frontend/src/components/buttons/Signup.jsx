@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Signup = () => {
     return (
         <>
@@ -26,18 +27,18 @@ const Signup = () => {
                             </button>
                             <form>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInput" className="form-label">Username</label>
-                                    <input type="text" className="form-control" id="exampleInput" />
+                                    <label htmlFor="exampleInput" className="form-label">Full Name</label>
+                                    <input type="text" className="form-control"  placeholder="Enter Your Name" id="exampleInput" />
 
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                    <input type="email" className="form-control" placeholder="Enter Your Email" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                     <div id="emailHelp" className="form-text"></div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                                    <input type="password" className="form-control" placeholder="Enter Your Password" id="exampleInputPassword1" />
                                 </div>
                                 
                                 <div className="d-flex flex-row align-items-center mb-4">
@@ -46,10 +47,12 @@ const Signup = () => {
                                         <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
                                     </div>
                                 </div>
-                                <div className="mb-3 form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                                </div>
+                                <div className="form-check d-flex justify-content-center mb-5">
+                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label className="form-check-label" htmlFor="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
                                 <button type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
                         </div>

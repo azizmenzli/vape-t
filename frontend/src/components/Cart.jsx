@@ -23,8 +23,14 @@ const Cart = () => {
                         </div>
                         <div className="col-md-4">
                             <h3>{cartItem.title}</h3>
-                            <p className="lead">${cartItem.price}</p>
+                           <div class="cart-item--content-price">
+                            <span className="cart-item--price-title">price:</span> 
+                            <p className="lead"> $ {cartItem.price}</p>
                         </div>
+                        </div>
+                        
+                            
+                        
                     </div>
 
                 </div>

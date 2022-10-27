@@ -1,6 +1,7 @@
 import React from 'react'
 import Contact from './Contact'
 import Product from './Product'
+import About from './About'
 
 const Home = () => {
   return (
@@ -14,10 +15,10 @@ const Home = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/assets/images/home/novo3.jpg" className="d-block w-100" alt="SMOK Novo 2 25W Pod System" height="500px" />
+            <img src="/assets/images/home/Best-Disposable-02-1024x427.jpg" className="d-block w-100" alt="SMOK Novo 2 25W Pod System" height="500px" />
           </div>
           <div className="carousel-item">
-            <img src="/assets/images/home/solo.jpg" className="d-block w-100" alt="Geek Vape Aegis Boost Pod Mod 40W" height="500px" />
+            <img src="/assets/images/home/pico-LE-banner.jpg" className="d-block w-100" alt="Geek Vape Aegis Boost Pod Mod 40W" height="500px" />
           </div>
           <div className="carousel-item">
             <img src="/assets/images/home/boost1.jpg" className="d-block w-100" alt="boost1" height="500px" />
@@ -35,8 +36,9 @@ const Home = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <Product/>
-      <Contact/>
+      <About />
+      <Product />
+      <Contact />
 
     </div>
   )
