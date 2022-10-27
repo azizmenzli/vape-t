@@ -9,7 +9,7 @@ module.exports={
     Liquides:mongoose.model('Liquides',{
      name:{type:String},
      price:{type:Number},
-     discription:{type:String},
+     description:{type:String},
      imgSrc:{type:String}
    
    }),
@@ -17,7 +17,7 @@ module.exports={
     Mode:mongoose.model('Mode',{
      nameBrand:{type:String},
      brand:{type:String},
-     discription:{type:String},
+     description:{type:String},
      price:{type:Number},
      imgSrc:{type:String}
    }),
@@ -28,11 +28,11 @@ module.exports={
      imgSrc:String
    
    }),
-    VapeCollection1:mongoose.model('VapeCollection',{
+    VapeCollection:mongoose.model('VapeCollection',{
      nameBrand:String,
      brand:String,
      price:Number,
-     discription:String,
+     description:String,
      category:String,
      imgSrc:String
    }) ,
