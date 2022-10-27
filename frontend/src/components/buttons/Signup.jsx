@@ -1,10 +1,10 @@
 import React from 'react'
 
 const Signup = () => {
-  return (
-    <>
-    
-    <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark" 
+    return (
+        <>
+
+            <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark"
                 data-bs-toggle="modal" data-bs-target="#signupModal">
                 <span className='fa fa-user-plus ms-1'></span> Sign up
             </button>
@@ -27,31 +27,38 @@ const Signup = () => {
                             <form>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInput" className="form-label">Username</label>
-                                    <input type="text" className="form-control" id="exampleInput"/>
-                                        
+                                    <input type="text" className="form-control" id="exampleInput" />
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                                        <div id="emailHelp" className="form-text"></div>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                    <div id="emailHelp" className="form-text"></div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input type="password" className="form-control" id="exampleInputPassword1"/>
+                                    <input type="password" className="form-control" id="exampleInputPassword1" />
+                                </div>
+                                
+                                <div className="d-flex flex-row align-items-center mb-4">
+                                    <div className="form-outline flex-fill mb-0">
+                                        <input type="password" id="form3Example4cd" className="form-control" />
+                                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
+                                    </div>
                                 </div>
                                 <div className="mb-3 form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                                 </div>
                                 <button type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default Signup
