@@ -6,7 +6,9 @@ const User = require('../model/userModel')
 // @desc    Register new user
 // @route   POST /api/users
 // @access  Public
+
 const registerUser = asyncHandler(async (req, res) => {
+
 
   //res.json({message : 'Register User'})
   const { name, email, password } = req.body
@@ -94,7 +96,6 @@ const generateToken = (id) => {
     expiresIn: '30d',
   })
 }
-
 module.exports = {
   registerUser,
   loginUser,
