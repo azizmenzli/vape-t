@@ -109,16 +109,7 @@ const Login = () => {
                                         <label className="custom-control-label" htmlFor="customControlInline">Remember me</label>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-dark w-100 mt-5" >Sign in</button>
-                                <p className='justify-content-center'>or</p>
-
-                                <button className="btn btn-danger btn-rounded w-100 mb-4" >
-                                <span className='fa fa-google me-2'></span>Sign in with Google
-                            </button>
-                            <button className="btn btn-primary btn-rounded w-100 mb-4" >
-                                <span className='fa fa-facebook me-2'></span>Sign in with Facebook
-                            </button>
-
+                                <button data-bs-dismiss="modal"  type="submit" className="btn btn-dark w-100 mt-5" >Sign in</button>
                             </form>
                              {/* Form end */}
                         </div>
