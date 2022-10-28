@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { delItem } from '../redux/actions/index'
 
 
@@ -23,8 +24,14 @@ const Cart = () => {
                         </div>
                         <div className="col-md-4">
                             <h3>{cartItem.title}</h3>
-                            <p className="lead">${cartItem.price}</p>
+                           <div class="cart-item--content-price">
+                            <span className="cart-item--price-title">price:</span> 
+                            <p className="lead"> $ {cartItem.price}</p>
                         </div>
+                        </div>
+                        
+                            
+                        
                     </div>
 
                 </div>
@@ -45,13 +52,23 @@ const Cart = () => {
             </div>
         )
     }
+    const button=()=>{
+        return(
+            <div className="container">
+                <div className="row">
+                    <NavLink to="/checkout" className="btn btn-outline-dark mb-5
+                     w-25 mx-auto">Proceed To checkout</NavLink>
+                </div>
+            </div>
+        );
+    }
 
 
     return (
         <>
             {state.length === 0 && emptyCart()}
-
             {state.length !== 0 && state.map(cartItems)}
+            {state.length !== 0 && button()}
         </>
     )
 
