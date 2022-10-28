@@ -95,7 +95,7 @@ const Signup = () => {
                                 <span className='fa fa-facebook me-2'></span>Sign up with Facebook
                             </button>
                             {/* Form start */}
-                            <h1>ghgfhgfhf</h1>
+                        
                             <form onSubmit={(e)=>handelSubmit(e)}>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInput" className="form-label">Username</label>
@@ -138,6 +138,7 @@ const Signup = () => {
                                     />
                                 </div>
                                 <div className='form-group'>
+                                    <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
                                     <input
                                         type='password'
                                         className='form-control'
@@ -148,20 +149,13 @@ const Signup = () => {
                                         onChange={(e)=>handleInputChange(e)}
                                     />
                                 </div>
-                                
-                                <div className="d-flex flex-row align-items-center mb-4">
-                                    <div className="form-outline flex-fill mb-0">
-                                        <input type="password" id="form3Example4cd" className="form-control" />
-                                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-                                    </div>
-                                </div>
                                 <div className="form-check d-flex justify-content-center mb-5">
-                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label className="form-check-label" htmlFor="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div>
-                                <button type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
+                                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                    <label className="form-check-label" htmlFor="form2Example3">
+                                    I agree all statements in <a href="#!">Terms of service</a>
+                                    </label>
+                                </div>
+                                <button data-bs-dismiss="modal"  type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
                              {/* Form end */}
                         </div>
