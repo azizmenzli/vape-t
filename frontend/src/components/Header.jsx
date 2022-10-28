@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom'
 import '../styles/style.css'
 import CartBtn from './buttons/CartBtn'
 import Login from './buttons/Login'
+import Search from './buttons/Search'
 import Signup from './buttons/Signup'
+
 
 const Header = () => {
     return (
@@ -15,11 +17,13 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <NavLink to="/" className="logo"><img src="/assets/images/vape.png" alt='' /></NavLink>
+                        <hr />
                             <li className="nav-item">
                                 <NavLink className="nav-link " aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/products">Product</NavLink>
+                                <NavLink className="nav-link" to="/products">Shop</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/about">About</NavLink>
@@ -27,10 +31,12 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             </li>
-
-
+                            
+                          
                         </ul>
-                        <NavLink to="/" className="logo"><img src="/assets/images/vape.png" alt='' /></NavLink>
+
+                        <Search/>
+         
                         <Login />
                         <Signup />
                         <CartBtn/>
