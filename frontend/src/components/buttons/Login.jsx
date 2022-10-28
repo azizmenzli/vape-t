@@ -1,15 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+
 
 const Login = () => {
 
-    const googleAuth = () => {
-		window.open(
-			`${process.env.REACT_APP_API_URL}/auth/google/callback`,
-			"_self"
-		);
-	};
+   
 
     return (
         <>
@@ -52,7 +47,7 @@ const Login = () => {
                                 <button className="btn btn-danger btn-rounded w-100 mb-4" >
                                 <span className='fa fa-google me-2'></span>Sign in with Google
                             </button>
-                            <button className="btn btn-primary btn-rounded w-100 mb-4" onClick={googleAuth}>
+                            <button className="btn btn-primary btn-rounded w-100 mb-4" >
                                 <span className='fa fa-facebook me-2'></span>Sign in with Facebook
                             </button>
 
@@ -60,7 +55,7 @@ const Login = () => {
                         </div>
                         <div className="mt-4">
                             <div className="d-flex justify-content-center links">
-                                Don't have an account? <Link to="/Signup" className="ml-2"> Sign Up</Link>
+                                Don't have an account? <NavLink to="/Signup" className="ml-2"> Sign Up</NavLink>
                             </div>
                             <div className="d-flex justify-content-center links">
                                 <a href="#">Forgot your password?</a>
