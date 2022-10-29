@@ -6,7 +6,8 @@ module.exports={
             nameBrand: request.nameBrand,
             price: request.price,
             brand: request.brand,
-            imgSrc: request.imgSrc
+            imgSrc: request.imgSrc,
+            cart:request.cart
         })
         newAtomizer.save().then((result)=>res.status(200).json(result))
         .catch((err)=> res.send(err.message).status(500))

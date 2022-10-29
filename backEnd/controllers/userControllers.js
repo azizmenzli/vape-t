@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
-const User = require('../model/userModel')
+const {User} = require('../model/productModel')
+const saveCart= require('../controllers/card')
 
 // @desc    Register new user
 // @route   POST /api/users
@@ -35,6 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password: hashedPassword,
+      cart:saveCart()
   })
 
   if (user) {

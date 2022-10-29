@@ -7,9 +7,12 @@ module.exports={
             nameBrand:request.nameBrand,
             price:request.price,
             brand:request.brand,
-            imgSrc:request.imgSrc
+            description:request.description,
+            category:request.category,
+            imgSrc:request.imgSrc,
+            cart:request.id
         })
-        newVape.save().then((results)=>res.status(200).json(results))
+        newVape.save().then((results)=>res.status(200).json({res:results,cartId:results.cart}))
         .catch((error)=>res.send(error.message).status(500))
     
     },
