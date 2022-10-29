@@ -151,10 +151,10 @@ const Signup = () => {
                                 <div className="form-check d-flex justify-content-center mb-5">
                                     <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                                     <label className="form-check-label" htmlFor="form2Example3">
-                                        I agree all statements in <a href="#!">Terms of service</a>
+                                    I agree all statements in <a href="#!">Terms of service</a>
                                     </label>
                                 </div>
-                                <button data-bs-dismiss="modal" type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
+                                <button data-bs-dismiss="modal"  type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
                             {/* Form end */}
                         </div>
