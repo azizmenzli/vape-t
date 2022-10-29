@@ -2,6 +2,12 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import DATA from '../Data'
 const Product = () => {
+
+  const Loading = ()=>{
+    <div className="col-md-3">
+      
+    </div>
+  }
   const cardItem = (item) => {
     return (
       <div className="card my-5 py-4" key={item.id} style={{ width: "18rem" }}>

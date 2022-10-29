@@ -1,7 +1,75 @@
 import React from 'react'
-
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import axios from 'axios';
+import { FaUser } from 'react-icons/fa'
 
 const Signup = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        password2: '',
+    })
+    const { name, email, password, password2 } = formData;
+    const navigate = useNavigate();
+
+
+    //   const handelSubmit = (e) => {
+    //     setFormData((prevState) => ({
+    //       ...prevState,
+    //       [e.target.name]: e.target.value,
+    //     }))
+    //   }
+
+    const handelSubmit = (e) => {
+        e.preventDefault()
+
+        if (!password || !email) {
+            toast.error('Please provide value into each input field');
+        } else {
+
+            axios
+                .post("http://localhost:8000/api/users", { password, email, name })
+                .then((response) => {
+                    setFormData({ password: "", email: "", name: "", password2: "" })
+                    console.log(response.data)
+                    if (response.data) {
+                        toast.success(`User :  added in Successfully`);
+                        setTimeout((e) => navigate('/users'), 500);
+                        //setTimeout((e)=> navigate('/'), 500 );
+
+                        //document.getElementById("signupModal").modal('toggle'); //or  $('#IDModal').modal('hide');
+
+
+                    } else {
+                        toast.error(response.data);
+                        setTimeout((e) => navigate('/'), 500);
+                    }
+                })
+                .catch(err => { toast.error(err.response.data) });
+
+        }
+
+        // if (password !== password2) {
+        //   toast.error('Passwords do not match')
+        // } else {
+        //   const userData = {
+        //     name,
+        //     email,
+        //     password,
+        //   }
+        // }
+    }
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
+
     return (
         <>
 
@@ -25,36 +93,70 @@ const Signup = () => {
                             <button className="btn btn-primary btn-rounded w-100 mb-4">
                                 <span className='fa fa-facebook me-2'></span>Sign up with Facebook
                             </button>
-                            <form>
+                            {/* Form start */}
+
+                            <form onSubmit={(e) => handelSubmit(e)}>
                                 <div className="mb-3">
-                                    <label htmlFor="exampleInput" className="form-label">Full Name</label>
-                                    <input type="text" className="form-control"  placeholder="Enter Your Name" id="exampleInput" />
+                                    <label htmlFor="exampleInput" className="form-label">Username</label>
+                                    <input
+                                        type="text"
+                                        name='name'
+                                        value={name}
+                                        className="form-control"
+                                        id="name"
+                                        placeholder='Enter your name'
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
 
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-                                    <input type="email" className="form-control" placeholder="Enter Your Email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                    <input
+                                        type='email'
+                                        className='form-control'
+                                        id='email'
+                                        name='email'
+                                        value={email}
+                                        placeholder='Enter your email'
+                                        aria-describedby="emailHelp"
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
+
                                     <div id="emailHelp" className="form-text"></div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input type="password" className="form-control" placeholder="Enter Your Password" id="exampleInputPassword1" />
+                                    <input
+                                        type='password'
+                                        className='form-control'
+                                        id='password'
+                                        name='password'
+                                        value={password}
+                                        placeholder='Enter password'
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
                                 </div>
-                                
-                                <div className="d-flex flex-row align-items-center mb-4">
-                                    <div className="form-outline flex-fill mb-0">
-                                        <input type="password" id="form3Example4cd" className="form-control" />
-                                        <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-                                    </div>
+                                <div className='form-group'>
+                                    <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
+                                    <input
+                                        type='password'
+                                        className='form-control'
+                                        id='password2'
+                                        name='password2'
+                                        value={password2}
+                                        placeholder='Confirm password'
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
                                 </div>
                                 <div className="form-check d-flex justify-content-center mb-5">
-                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label className="form-check-label" htmlFor="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div>
-                                <button type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
+                                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                    <label className="form-check-label" htmlFor="form2Example3">
+                                    I agree all statements in <a href="#!">Terms of service</a>
+                                    </label>
+                                </div>
+                                <button data-bs-dismiss="modal"  type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
+                            {/* Form end */}
                         </div>
 
                     </div>
