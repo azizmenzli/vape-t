@@ -1,59 +1,58 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
-
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { FaUser } from 'react-icons/fa'
+import { GoogleLogin } from 'react-google-login';
 
 const Login = () => {
 
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-      })
-      const { email, password } = formData;
-      const navigate = useNavigate();
+    })
+    const { email, password } = formData;
+    const navigate = useNavigate();
 
-      const handelSubmit = (e) => {
+    const handelSubmit = (e) => {
         e.preventDefault()
 
-        if(!password|| !email ) {
+        if (!password || !email) {
             toast.error('Please provide value into each input field');
-        }else{
- 
+        } else {
+
             axios
-              .post("http://localhost:8000/api/users/login", {password, email})
-              .then((response)=>{
-                setFormData({password: "", email: "" })
-                console.log(response.data) 
-                if(response.data){
-                    console.log(`User :  loggedin Successfully`);
-                    toast.success(`User :  loggedin Successfully`);
-                    setTimeout((e)=> navigate('/users'), 500 ); 
-                }else{
-                  toast.error(response.data);
-                  setTimeout((e)=> navigate('/'), 500 );
-                }
-              })
-              .catch(err => {toast.error(err.response.data)});
+                .post("http://localhost:8000/api/users/login", { password, email })
+                .then((response) => {
+                    setFormData({ password: "", email: "" })
+                    console.log(response.data)
+                    if (response.data) {
+                        console.log(`User :  loggedin Successfully`);
+                        toast.success(`User :  loggedin Successfully`);
+                        setTimeout((e) => navigate('/users'), 500);
+                    } else {
+                        toast.error(response.data);
+                        setTimeout((e) => navigate('/'), 500);
+                    }
+                })
+                .catch(err => { toast.error(err.response.data) });
 
         }
-    
-      }
 
-      const handleInputChange = (e) => {
-        const {name, value} = e.target;
-        setFormData({ ...formData, [name]:value})
     }
 
-  return (
-    <>
-    
-    <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark" 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
+
+    return (
+        <>
+
+            <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark"
                 data-bs-toggle="modal" data-bs-target="#loginModal">
                 <span className='fa fa-user-plus ms-1'></span> Login
             </button>
@@ -67,14 +66,22 @@ const Login = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <button className="btn btn-danger btn-rounded w-100 mb-4" >
+                            {/* <button className="btn btn-danger btn-rounded w-100 mb-4" >
                                 <span className='fa fa-google me-2'></span>Sign up in with Google
-                            </button>
+                            </button> */}
+                            <GoogleLogin
+                                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                                buttonText="Login"
+                                // onSuccess={responseGoogle}
+                                // onFailure={responseGoogle}
+                          
+                                cookiePolicy={'single_host_origin'}
+                            />
                             <button className="btn btn-primary btn-rounded w-100 mb-4">
                                 <span className='fa fa-facebook me-2'></span>Sign up with Facebook
                             </button>
                             {/* Form start */}
-                            <form onSubmit={(e)=>handelSubmit(e)}>
+                            <form onSubmit={(e) => handelSubmit(e)}>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                                     <input
@@ -85,21 +92,21 @@ const Login = () => {
                                         value={email}
                                         placeholder='Enter your email'
                                         aria-describedby="emailHelp"
-                                        onChange={(e)=>handleInputChange(e)}
-                                        />
-                              
-                                        <div id="emailHelp" className="form-text"></div>
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
+
+                                    <div id="emailHelp" className="form-text"></div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input 
+                                    <input
                                         type='password'
                                         className='form-control'
                                         id='password'
                                         name='password'
                                         value={password}
                                         placeholder='Enter password'
-                                        onChange={(e)=>handleInputChange(e)}
+                                        onChange={(e) => handleInputChange(e)}
                                     />
                                 </div>
 
@@ -109,18 +116,9 @@ const Login = () => {
                                         <label className="custom-control-label" htmlFor="customControlInline">Remember me</label>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-dark w-100 mt-5" >Sign in</button>
-                                <p className='justify-content-center'>or</p>
-
-                                <button className="btn btn-danger btn-rounded w-100 mb-4" >
-                                <span className='fa fa-google me-2'></span>Sign in with Google
-                            </button>
-                            <button className="btn btn-primary btn-rounded w-100 mb-4" >
-                                <span className='fa fa-facebook me-2'></span>Sign in with Facebook
-                            </button>
-
+                                <button data-bs-dismiss="modal" type="submit" className="btn btn-dark w-100 mt-5" >Sign in</button>
                             </form>
-                             {/* Form end */}
+                            {/* Form end */}
                         </div>
                         <div className="mt-4">
                             <div className="d-flex justify-content-center links">
@@ -131,13 +129,13 @@ const Login = () => {
                             </div>
                         </div>
 
-                      
+
 
                     </div>
                 </div>
             </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default Login
