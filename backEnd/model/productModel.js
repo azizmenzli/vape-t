@@ -28,7 +28,7 @@ module.exports={
      imgSrc:String
    
    }),
-    VapeCollection1:mongoose.model('VapeCollection',{
+    VapeCollection:mongoose.model('VapeCollection',{
      nameBrand:String,
      brand:String,
      price:Number,
