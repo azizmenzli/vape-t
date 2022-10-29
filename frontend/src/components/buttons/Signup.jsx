@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -14,9 +13,9 @@ const Signup = () => {
         email: '',
         password: '',
         password2: '',
-      })
-      const { name, email, password, password2 } = formData;
-      const navigate = useNavigate();
+    })
+    const { name, email, password, password2 } = formData;
+    const navigate = useNavigate();
 
 
     //   const handelSubmit = (e) => {
@@ -25,36 +24,36 @@ const Signup = () => {
     //       [e.target.name]: e.target.value,
     //     }))
     //   }
-    
-      const handelSubmit = (e) => {
+
+    const handelSubmit = (e) => {
         e.preventDefault()
 
-        if(!password|| !email ) {
+        if (!password || !email) {
             toast.error('Please provide value into each input field');
-        }else{
- 
-            axios
-              .post("http://localhost:8000/api/users", {password, email, name})
-              .then((response)=>{
-                setFormData({password: "", email: "", name:"", password2: "" })
-                console.log(response.data) 
-                if(response.data){
-                    toast.success(`User :  added in Successfully`);
-                    setTimeout((e)=> navigate('/users'), 500 );
-                    //setTimeout((e)=> navigate('/'), 500 );
+        } else {
 
-                    //document.getElementById("signupModal").modal('toggle'); //or  $('#IDModal').modal('hide');
-                        
-                    
-                }else{
-                  toast.error(response.data);
-                  setTimeout((e)=> navigate('/'), 500 );
-                }
-              })
-              .catch(err => {toast.error(err.response.data)});
+            axios
+                .post("http://localhost:8000/api/users", { password, email, name })
+                .then((response) => {
+                    setFormData({ password: "", email: "", name: "", password2: "" })
+                    console.log(response.data)
+                    if (response.data) {
+                        toast.success(`User :  added in Successfully`);
+                        setTimeout((e) => navigate('/users'), 500);
+                        //setTimeout((e)=> navigate('/'), 500 );
+
+                        //document.getElementById("signupModal").modal('toggle'); //or  $('#IDModal').modal('hide');
+
+
+                    } else {
+                        toast.error(response.data);
+                        setTimeout((e) => navigate('/'), 500);
+                    }
+                })
+                .catch(err => { toast.error(err.response.data) });
 
         }
-    
+
         // if (password !== password2) {
         //   toast.error('Passwords do not match')
         // } else {
@@ -64,17 +63,17 @@ const Signup = () => {
         //     password,
         //   }
         // }
-      }
-
-      const handleInputChange = (e) => {
-        const {name, value} = e.target;
-        setFormData({ ...formData, [name]:value})
     }
 
-  return (
-    <>
-    
-    <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark" 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value })
+    }
+
+    return (
+        <>
+
+            <button type="button" className="btn btn-light ms-2" data-mdb-ripple-color="dark"
                 data-bs-toggle="modal" data-bs-target="#signupModal">
                 <span className='fa fa-user-plus ms-1'></span> Sign up
             </button>
@@ -95,20 +94,20 @@ const Signup = () => {
                                 <span className='fa fa-facebook me-2'></span>Sign up with Facebook
                             </button>
                             {/* Form start */}
-                        
-                            <form onSubmit={(e)=>handelSubmit(e)}>
+
+                            <form onSubmit={(e) => handelSubmit(e)}>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInput" className="form-label">Username</label>
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name='name'
-                                        value={name} 
-                                        className="form-control" 
-                                        id="name" 
+                                        value={name}
+                                        className="form-control"
+                                        id="name"
                                         placeholder='Enter your name'
-                                        onChange={(e)=>handleInputChange(e)}
+                                        onChange={(e) => handleInputChange(e)}
                                     />
-                                        
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
@@ -120,21 +119,21 @@ const Signup = () => {
                                         value={email}
                                         placeholder='Enter your email'
                                         aria-describedby="emailHelp"
-                                        onChange={(e)=>handleInputChange(e)}
-                                        />
-                              
-                                        <div id="emailHelp" className="form-text"></div>
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
+
+                                    <div id="emailHelp" className="form-text"></div>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input 
+                                    <input
                                         type='password'
                                         className='form-control'
                                         id='password'
                                         name='password'
                                         value={password}
                                         placeholder='Enter password'
-                                        onChange={(e)=>handleInputChange(e)}
+                                        onChange={(e) => handleInputChange(e)}
                                     />
                                 </div>
                                 <div className='form-group'>
@@ -146,7 +145,7 @@ const Signup = () => {
                                         name='password2'
                                         value={password2}
                                         placeholder='Confirm password'
-                                        onChange={(e)=>handleInputChange(e)}
+                                        onChange={(e) => handleInputChange(e)}
                                     />
                                 </div>
                                 <div className="form-check d-flex justify-content-center mb-5">
@@ -157,7 +156,7 @@ const Signup = () => {
                                 </div>
                                 <button data-bs-dismiss="modal"  type="submit" className="btn btn-dark w-100 mt-5" >Sign Up</button>
                             </form>
-                             {/* Form end */}
+                            {/* Form end */}
                         </div>
 
                     </div>
