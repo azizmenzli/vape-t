@@ -169,6 +169,24 @@ ul{
 	color: #24262b;
 	background-color: #ffffff;
 }
+.contact-icons i{
+	height: 50px;
+	width: 50px;
+	background: #12141c;
+	border-radius: 0.5rem;
+	color: var(--main-color);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 19px;
+	margin-right: 10px;
+	transition: all .40s ease;
+}
+.contact-icons i:hover{
+	transform: scale(1.01) translateY(-5px);
+	color: var(--text-color);
+	background: var(--main-color);
+}
 
 /*responsive*/
 @media(max-width: 767px){
