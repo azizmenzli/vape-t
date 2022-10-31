@@ -22,11 +22,9 @@ const Home = () => {
             <img src="/assets/images/home/pico-LE-banner.jpg" className="d-block w-100" alt="Geek Vape Aegis Boost Pod Mod 40W" height="700px" />
           </div>
           <div className="carousel-item">
-            <img src="/assets/images/home/boost1.jpg" className="d-block w-100" alt="boost1" height="500px" />
+            <img src="/assets/images/home/Bmor-Yolo-Disposable-Kit-3.jpg" className="d-block w-100" alt="boost1" height="700px" />
           </div>
-          <div className="carousel-item">
-            <img src="/assets/images/home/boostmax.jpg" className="d-block w-100" alt="boostmax" height="500px" />
-          </div>
+          
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -9,6 +9,7 @@ const Product = () => {
     </div>
   }
   const cardItem = (item) => {
+    
     return (
       <div className="card my-5 py-4" key={item.id} style={{ width: "18rem" }}>
         <img src={item.img} className="card-img-top" alt={item.title} />
@@ -17,6 +18,7 @@ const Product = () => {
           <p className="lead">${item.price}</p>
           <NavLink to={`/products/${item.id}`} className="btn
            btn-outline-dark">Buy Now</NavLink>
+           
         </div>
       </div>
     )

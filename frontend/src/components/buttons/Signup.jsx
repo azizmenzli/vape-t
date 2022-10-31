@@ -33,7 +33,7 @@ const Signup = () => {
         } else {
 
             axios
-                .post("http://localhost:8000/api/users", { password, email, name })
+                .post("http://localhost:5000/api/users", { password, email, name })
                 .then((response) => {
                     setFormData({ password: "", email: "", name: "", password2: "" })
                     console.log(response.data)

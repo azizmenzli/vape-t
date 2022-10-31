@@ -78,7 +78,7 @@ const Login = () => {
                                 cookiePolicy={'single_host_origin'}
                             />
                             <button className="btn btn-primary btn-rounded w-100 mb-4">
-                                <span className='fa fa-facebook me-2'></span>Sign up with Facebook
+                                <span className='fa fa-facebook me-2'></span>Sign in with Facebook
                             </button>
                             {/* Form start */}
                             <form onSubmit={(e) => handelSubmit(e)}>
